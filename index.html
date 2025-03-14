@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Configurações básicas -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO -->
+    <title>Eduardo Fidalgo - Desenvolvedor Fullstack | Portfólio</title>
+    <meta name="description"
+      content="Sou Eduardo Fidalgo, desenvolvedor fullstack especializado em criação de sistemas web modernos, responsivos e otimizados para SEO. Criação de sites, plataformas, freelancer etc." />
+    <meta name="keywords"
+      content="Eduardo Fidalgo, desenvolvedor fullstack, programador freelancer, freelancer, Java, SpringBoot, PHP, Laravel, Lumen, JavaScript, React, Node.js, GoLang, Python, API RESTful, backend, frontend, desenvolvimento web, otimização de performance, testes unitários, PHPUnit, refatoração de sistemas, escalabilidade, sistemas de alto tráfego, desenvolvimento ágil, metodologias ágeis, versionamento de código, aplicações web, tecnologia, sistemas legados, eficiência, engenharia de software, software moderno, inovação tecnológica, portfólio de programador, aplicações escaláveis, microservices, segurança em software, boas práticas de desenvolvimento, DevOps, integração de sistemas, automação, CI/CD, Docker, Kubernetes, banco de dados, SQL, NoSQL, MongoDB, MySQL, PostgreSQL" />
+
+    <meta name="author" content="Eduardo Fidalgo" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph (Para Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="Eduardo Fidalgo - Desenvolvedor Fullstack | Portfólio" />
+    <meta property="og:description" content="Um portifólio futurista - 2025.." />
+    <meta property="og:image" content="https://meusite.com/robot.svg" />
+    <meta property="og:url" content="https://meusite.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card (Para compartilhamento no Twitter) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Eduardo Fidalgo - Desenvolvedor Fullstack" />
+    <meta name="twitter:description" content="Um portifólio futurista - 2025." />
+    <meta name="twitter:image" content="https://meusite.com/robot.svg" />
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+
+    <!-- Ícones e Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/favicon.png" type="image/x-icon">
+  </head>
+
+  <body>
+    <div class="dashboard">
+      <!-- <div class="dashboard-nav">
+        <header>
+          <a href="#!" class="menu-toggle">
+            <i class="fas fa-bars"></i>
+          </a>
+          <a href="#" class="brand-logo">
+            <i class="fas fa-anchor"></i>
+            <span>BRAND</span>
+          </a>
+        </header>
+        <nav class="dashboard-nav-list">
+          <a href="#" class="dashboard-nav-item">
+            <i class="fas fa-home"></i> Home </a>
+          <a href="#" class="dashboard-nav-item active">
+            <i class="fas fa-tachometer-alt"></i> dashboard </a>
+          <a href="#" class="dashboard-nav-item">
+            <i class="fas fa-file-upload"></i> Upload </a>
+          <div class="dashboard-nav-dropdown">
+            <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+              <i class="fas fa-photo-video"></i> Media </a>
+            <div class="dashboard-nav-dropdown-menu">
+              <a href="#" class="dashboard-nav-dropdown-item">All</a>
+              <a href="#" class="dashboard-nav-dropdown-item">Recent</a>
+              <a href="#" class="dashboard-nav-dropdown-item">Images</a>
+              <a href="#" class="dashboard-nav-dropdown-item">Video</a>
+            </div>
+          </div>
+          <div class="dashboard-nav-dropdown">
+            <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+              <i class="fas fa-users"></i> Users </a>
+            <div class="dashboard-nav-dropdown-menu">
+              <a href="#" class="dashboard-nav-dropdown-item">All</a>
+              <a href="#" class="dashboard-nav-dropdown-item">Subscribed</a>
+              <a href="#" class="dashboard-nav-dropdown-item">Non-subscribed</a>
+              <a href="#" class="dashboard-nav-dropdown-item">Banned</a>
+              <a href="#" class="dashboard-nav-dropdown-item">New</a>
+            </div>
+          </div>
+          <div class="dashboard-nav-dropdown">
+            <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+              <i class="fas fa-money-check-alt"></i> Payments </a>
+            <div class="dashboard-nav-dropdown-menu">
+              <a href="#" class="dashboard-nav-dropdown-item">All</a>
+              <a href="#" class="dashboard-nav-dropdown-item">Recent</a>
+              <a href="#" class="dashboard-nav-dropdown-item"> Projections</a>
+            </div>
+          </div>
+          <a href="#" class="dashboard-nav-item">
+            <i class="fas fa-cogs"></i> Settings </a>
+          <a href="#" class="dashboard-nav-item">
+            <i class="fas fa-user"></i> Profile </a>
+          <div class="nav-item-divider"></div>
+          <a href="#" class="dashboard-nav-item">
+            <i class="fas fa-sign-out-alt"></i> Logout </a>
+        </nav>
+      </div> -->
+      <div class="dashboard-app">
+      <header class=" dashboard-toolbar d-flex justify-content-end p-3" style="align-items: center;">
+        <a href="#" class="link" onclick="window.open(window.location.origin + '/documentation.html', '_blank');"
+          class="buttonDocumentation"> documentação
+        </a>
+        <a href="https://wa.me/5513974267888" target="_blank" class="buttonWhatsapp">
+          <i class="fab fa-whatsapp" style="font-size: 23px;"></i> entrar em contato
+          <i class="fa fa-arrow-right" style="font-size: 15px; font-weight: 500;" aria-hidden="true"></i>
+        </a>
+      </header>
+        <div class="dashboard-content">
+          <div class="hero container">
+            <div class="row ">
+              <div class="col-md-6 text-container">
+                <h1 class="title">
+                  <b>Moldando o Futuro com Tecnologia e Inovação</b>
+                </h1>
+                <p class="description"> 
+                  Com uma visão focada no futuro, crio soluções digitais inovadoras que conectam o presente ao amanhã. Meu trabalho
+                  transforma ideias em experiências imersivas, elevando a experiência digital e antecipando as necessidades do futuro.
+               </p>
+                <div class="row"  style="margin-top: 30px;">
+                  <div class="col-md-12" style="text-align: center;">
+                    <a href="#!">
+                      <i class="fas fa-chevron-double-down fa-2x" style="color: #515151;"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 img-container">
+                <img src="./img//robot.svg" class="robot-img" alt="Robot Image" />
+              </div>
+            </div>
+
+            <div class="row profile-container d-flex flex-column-reverse flex-md-row">
+              <div class="col-md-5">
+                <img src="./img//profile.jpeg" width="450" class="profile-img img-fluid" alt="Profile Image" />
+                <div class="social-icons mt-3">
+                  <a href="https://www.linkedin.com/in/eduardo-fidalgo-43801625a/" target="_blank" class="btn btn-link">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                  </a>
+                  <a href="https://wa.me/5513974267888" target="_blank" class="btn btn-link">
+                    <i class="fab fa-whatsapp fa-2x"></i>
+                  </a>
+                  <a href="https://github.com/EduardoFidalgo" target="_blank" class="btn btn-link">
+                    <i class="fab fa-github fa-2x"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title" style="font-weight: bold;">Eduardo Fidalgo</h4>
+                    <p class="card-text" style="text-align: left;">
+                      Sou um Desenvolvedor Full-Stack com expertise em Java + SpringBoot, PHP, JavaScript, GoLang e Python. Ao longo
+                      da minha
+                      carreira, adquiri experiência sólida em testes unitários com PHPUnit, desenvolvimento de soluções com Laravel,
+                      criação
+                      de RESTful APIs em Lumen, além de construir interfaces reutilizáveis em React e sistemas backend com Node.js e
+                      GoLang.
+                      <br><br>
+                      Meu foco é criar aplicações eficientes, intuitivas e escaláveis, sempre voltadas à solução de problemas reais.
+                      Trabalhei
+                      com metodologias ágeis e sou familiarizado com o gerenciamento de versões e projetos. Contribuo ativamente na
+                      criação e
+                      manutenção de ferramentas completas, que integram o backend e o frontend de sistemas.
+                      <br><br>
+                      Tenho vasta experiência em otimização de performance, especialmente em sistemas de alto tráfego, como o
+                      aumento de
+                      eficiência em tabelas com milhões de acessos. Além disso, possuo uma abordagem proativa na refatoração de
+                      sistemas
+                      legados, garantindo que se mantenham atualizados com as melhores práticas.
+                      <br><br>
+                      Busco constantemente novos desafios e oportunidades para evoluir como profissional e colaborar com a
+                      comunidade
+                      tecnológica. Fique à vontade para entrar em contato para discutir como posso contribuir com o seu projeto ou
+                      para
+                      oportunidades de colaboração.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container" style="margin-top: 10%;">
+              <div class="row" style="align-items: center;">
+            
+                <!-- Timeline -->
+                <div class="col-md-6">
+                  <div class="timeline">
+            
+                    <!-- Timeline Item -->
+                    <div class="timeline-item">
+                      <img src="./img/letmein.png" alt="LETMEIN - logo" style="width: 100px!important; height: 100px!important;" class="timeline-logo">
+                      <div class="timeline-content">
+                        <h4>Desenvolvedor Fullstack</h4>
+                        <p class="text-muted" style="margin-top: 5px;">nov de 2021 - (presente)</p>
+                        <p class="mb-1">➥ Desenvolvimento Back-End & Front-End</p>
+                        <p class="mb-1">➥ Manutenção de plataformas e APIs</p>
+                        <p class="mb-1">➥ Destaque em BugHunter</p>
+                        <small class="text-muted">PHP | Laravel | JavaScript | Docker | SQL</small>
+                      </div>
+                    </div>
+            
+                    <!-- Timeline Item -->
+                    <div class="timeline-item">
+                      <img src="./img/tip.png" alt="TIP - logo" style="width: 100px!important; height: 100px!important;" class="timeline-logo">
+                      <div class="timeline-content">
+                        <h4>Desenvolvedor Fullstack</h4>
+                        <p class="text-muted" style="margin-top: 5px;">jun de 2024 - ago de 2024</p>
+                        <p class="mb-1">➥ Desenvolvimento de API's com integração Frontend</p>
+                        <p class="mb-1">➥ Otimização de performance</p>
+                        <p class="mb-1">➥ Integração de APIs</p>
+                        <small class="text-muted">Javascript | PHP | Docker | Git | SQL | MySQL</small>
+                      </div>
+                    </div>
+            
+                  </div>
+                </div>
+            
+                <!-- Formação Acadêmica e Cursos -->
+                <div class="col-md-6">
+                  <div class="info-section">
+                    <h2>Graduação</h2>
+                    <p><strong>Análise e Desenvolvimento de Sistemas</strong>  Estácio <strong>2025</strong> ◄</p>
+                    <p><strong>Curso Técnico Programador WEB</strong>  SENAC <strong>2021</strong> ◄</p>
+                    <br>
+                    <h2>Cursos</h2>
+                    <p>Laravel Completo - O mais poderoso Framework PHP  <strong>UDEMY</strong> ◄</p>
+                    <p>Laravel 10 - Do básico ao avançado  <strong>UDEMY</strong> ◄</p>
+                    <p>Projeto Completo NodeJS, React, React Native, TypeScript  <strong>UDEMY</strong> ◄</p>
+                    <p>Formação Laravel: Crie aplicações web em PHP  <strong>Alura</strong> ◄</p>
+                    <p>Formação Boas Práticas em PHP  <strong>Alura</strong> ◄</p>
+                    <p>Formação Linguagem GO  <strong>Alura</strong> ◄</p>
+                    <p>React: Praticando React com JS <strong>Alura</strong> ◄</p>
+                    <p>Curso de Java - Aplicação com Java e Springboot  <strong>RocketSeat</strong> ◄</p>
+                  </div>
+                </div>
+            
+              </div>
+
+              <div class="container" style="margin-top: 10%">
+                <div class="row">
+                  <div class="col-md-12">
+                    <canvas id="commitChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="outside-dashboard">
+          <br><br>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 224 1440 96">
+            <path fill="#000" fill-opacity="1" d="M0,256L1440,224L1440,320L0,320Z"></path>
+          </svg>
+          <div class="parent-container"
+            style="background: rgb(25,25,25);background: linear-gradient(0deg, rgba(25,25,25,1) 0%, rgba(0,0,0,1) 97%); margin: 0; padding: 0; width: 100vw;">
+            <div class="container">
+              <div class="row" style="justify-content: center; text-align: center;">
+                <div class="col-md-6">
+                  <canvas id="myRadarChart" height="500"></canvas>
+                </div>
+                <div class="col-md-6">
+                  <img src="./img//strangeRobot.svg" class="robot-img2" alt="Robot Image" />
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="container" style="margin-top: 10%;">
+            <div class="row justify-content-center m-0">
+              <div class="col-md-3 col-sm-6">
+                <div class="custom-card">
+                  <div class="card-image">
+                    <img src="./img//JAVA.svg" alt="Java SpringBoot" class="img-fluid justify-content-center">
+                  </div>
+                  <div class="card-footer">
+                    <div class="user-info">
+                      <strong>Java SpringBoot - API RESTful</strong><br>
+                      <p>API desenvolvida com JAVA + SpringBoot seguindo os princípios e restrições de arquitetura de software
+                        RESTful, utilizando banco de
+                        dados PostgresSQL.</p>
+                      <span style="color: black;">@Backend</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <div class="col-md-3 col-sm-6">
+                <div class="custom-card">
+                  <div class="card-image">
+                    <img src="./img//LAR.svg" alt="Java SpringBoot" class="img-fluid justify-content-center">
+                  </div>
+                  <div class="card-footer">
+                    <div class="user-info">
+                      <strong>PHP - Controle de acesso PowerBI</strong><br>
+                      <p>Sistema desenvolvido com o framework Laravel, que visa oferecer um controle completo sobre o acesso a
+                        informações por
+                        meio de painéis PowerBI.</p>
+                      <span style="color: black;">@Backend</span>
+                      <span style="color: black;">@Frontend</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <div class="col-md-3 col-sm-6">
+                <div class="custom-card">
+                  <div class="card-image">
+                    <img src="./img//PY.svg" alt="Java SpringBoot" class="img-fluid justify-content-center">
+                  </div>
+                  <div class="card-footer">
+                    <div class="user-info">
+                      <strong>Python/Excel - Automação</strong><br>
+                      <p>O script Python atualiza um arquivo Excel com as cotações de USD, EUR e BTC em BRL usando uma API e a
+                        biblioteca pandas.
+                        Ele é executado com atualização constante.</p>
+                      <span style="color: black;">@Automação</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <div class="col-md-3 col-sm-6">
+                <div class="custom-card">
+                  <div class="card-image">
+                    <img src="./img//GO.svg" alt="Java SpringBoot" class="img-fluid justify-content-center">
+                  </div>
+                  <div class="card-footer">
+                    <div class="user-info">
+                      <strong>GOlang - Webscrapping</strong><br>
+                      <p>Projeto desenvolvido com o objetivo de capturar dados de uma determinada página web e disponibilizar os
+                        dados por meio
+                        de uma API.</p>
+                      <span style="color: black;">@Webscrapping</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center mt-4">
+              <a target="_blank" href="https://github.com/EduardoFidalgo?tab=repositories">
+                <button class="btn btn-dark">Ver mais +</button>
+              </a>
+            </div>
+          </div>
+
+          <div style="background: rgb(25,25,25); background: linear-gradient(0deg, rgba(25,25,25,1) 0%, rgba(0,0,0,1) 97%);
+            margin: 0; padding: 0; width: 100vw; display: flex; justify-content: center; align-items: center; margin-top: 10%;
+            padding-top: 20px;">
+            <div class="container">
+              <div class="row justify-content-center flex-column-reverse flex-md-row">
+                <!-- Imagem -->
+                <div class="col-md-6 text-center">
+                  <img src="./img//handGod.svg" class="robot-img" alt="Robot Image" style="max-width: 100%; height: auto; margin-top: -20px;" />
+                </div>
+          
+            <!-- Formulário -->
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+              <form method="POST" class="w-100 rounded-1 p-4 text-secondary bg-dark" action="https://formspree.io/f/xblgljjk"
+                style="border: transparent;">
+                <!-- Título -->
+                <h2 class="text-light mb-4 bold text-center"
+                  style="font-family: 'Roboto', sans-serif; font-weight: bold; font-size: 1.8rem; padding: 20px;">
+                  Vamos construir o amanhã, juntos!
+                </h2>
+                <hr>
+                <!-- Nome -->
+                <label class="d-block mb-4 text-left mt-4">
+                  <span class="form-label d-block text-light">Seu nome completo:</span>
+                  <input name="name" type="text" class="form-control text-light border-secondary bg-transparent"
+                    placeholder="Jon Joe.." required />
+                </label>
+            
+                <!-- Email -->
+                <label class="d-block mb-4 text-left">
+                  <span class="form-label d-block text-light">Email principal:</span>
+                  <input name="email" type="email" class="form-control border-secondary bg-transparent text-light"
+                    placeholder="seu_email@example.com" required />
+                </label>
+            
+                <!-- Mensagem -->
+                <label class="d-block mb-4 text-left">
+                  <span class="form-label d-block text-light">Proposta sugerida:</span>
+                  <textarea name="message" class="form-control border-secondary bg-transparent text-light" rows="3"
+                    placeholder="Insira a mensagem desejada.." required></textarea>
+                </label>
+            
+                <!-- Botão de Envio -->
+                <div class="mb-3" style="text-align: right; justify-content: right;">
+                  <button type="submit" class="btn"
+                    style="background-color: #777; color: #fff; border: none; border-radius: 30px; padding: 12px 60px; font-size: 1.1rem; transition: background-color 0.3s;">
+                    Enviar
+                  </button>
+                </div>
+              </form>
+            </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="footer" style="text-align: center; margin-top: 10%;">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <h4 class="footer-text">Eduardo Fidalgo - Fullstack Developer</h4>
+                  <hr class="footer-divider">
+                  <div class="footer-icons">
+                    <a href="https://www.linkedin.com/in/eduardo-fidalgo-43801625a/" target="_blank" class="btn btn-link">
+                      <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                    <a href="https://wa.me/5513974267888" target="_blank" class="btn btn-link">
+                      <i class="fab fa-whatsapp fa-2x"></i>
+                    </a>
+                    <a href="https://github.com/EduardoFidalgo" target="_blank" class="btn btn-link">
+                      <i class="fab fa-github fa-2x"></i>
+                    </a>
+                    <br>
+                  <h6 style="color: grey; margin-top: 20px;">@2025 - Copyright, Criado por: Eduardo Fidalgo</h6>
+                </div>
+              </div>
+            </div>
+          </footer>
+
+        </div>
+      </div>
+      
+      <div class="chatbot" onclick="toggleChat()">
+        <img src="./img//IA.svg" alt="Chatbot IA" width="110" class="chatbot-img" />
+      </div>
+      
+      <div class="chatbox" id="chatbox">
+        <div class="messagebox">
+          <!-- Mensagens do chat -->
+          <div class="chat-message">
+            <p><strong>Chatbot:</strong> Como posso te ajudar hoje?</p>
+          </div>
+        </div>
+      
+        <div class="chat-input">
+          <input type="text" id="message-filter" placeholder="Filtre sua pergunta..." onkeyup="filterMessages()" />
+        </div>
+      
+        <div class="message-options" id="message-options">
+          <!-- Mensagens prontas -->
+          <div class="message-option" onclick="sendMessage('Quais são seus serviços?')">Quais são seus serviços?</div>
+          <div class="message-option" onclick="sendMessage('Quais suas formações?')">Quais suas formações?</div>
+          <div class="message-option" onclick="sendMessage('Fale sobre sua experiência com PHP.')">Fale sobre sua experiência
+            com PHP.</div>
+          <div class="message-option" onclick="sendMessage('Como você otimiza o desempenho de sistemas?')">Como você otimiza o
+            desempenho de sistemas?</div>
+          <div class="message-option" onclick="sendMessage('Quais tecnologias você utiliza no front-end?')">Quais tecnologias
+            você utiliza no front-end?</div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+      const mobileScreen = window.matchMedia("(max-width: 992px)");
+
+     function toggleChat() {
+        const chatbox = document.getElementById("chatbox");
+        chatbox.style.display = chatbox.style.display === "none" || chatbox.style.display === "" ? "flex" : "none";
+      }
+
+      function filterMessages() {
+        const filter = document.getElementById("message-filter").value.toLowerCase();
+        const options = document.querySelectorAll(".message-option");
+
+        options.forEach(option => {
+          const text = option.textContent.toLowerCase();
+          if (text.includes(filter)) {
+            option.style.display = "block";
+          } else {
+            option.style.display = "none";
+          }
+        });
+      }
+
+      function sendMessage(message) {
+        const chatbox = document.querySelector(".messagebox");
+        const chatMessage = document.createElement("div");
+        chatMessage.classList.add("chat-message");
+        chatMessage.innerHTML = `<strong>Você:</strong> ${message}`;
+        chatbox.appendChild(chatMessage);
+
+        setTimeout(() => {
+          const botMessage = document.createElement("div");
+          botMessage.classList.add("chat-message");
+          botMessage.innerHTML = `<strong>Chatbot:</strong> ${getResponse(message)}`;
+          chatbox.appendChild(botMessage);
+
+          // Faz o scroll para a última mensagem
+          chatbox.scrollTop = chatbox.scrollHeight;
+        }, 1000);
+      }
+
+      function getResponse(message) {
+        switch (message) {
+          case 'Quais são seus serviços?':
+            return `Ao trabalhar com desenvolvimento, tenho conhecimento fullstack de uma plataforma. Com isso, já acumulei inúmeras experiências com o desenvolvimento visual de uma plataforma, seguindo padrões UX, UI, acessibilidade, responsividade e boas práticas. Com o backend, crio APIs, CRUDs, otimização de querys para bancos MySQL, integração entre plataformas e muito mais.`;
+          case 'Quais suas formações?':
+            return `Formação em Análise e Desenvolvimento de Sistemas (Estácio 2025), Curso Técnico Programador WEB (SENAC 2021). Cursos de Laravel, NodeJS, React, Java, entre outros.`;
+          case 'Fale sobre sua experiência com PHP.':
+            return `Tenho experiência com PHP utilizando o framework Laravel para a criação de RESTful APIs, desenvolvimento de sistemas escaláveis e manutenção de plataformas. Também trabalho com otimização de consultas e refatoração de código.`;
+          case 'Como você otimiza o desempenho de sistemas?':
+            return `Trabalho com a otimização de banco de dados, utilizando índices, cache e ajuste de queries. Além disso, aplico técnicas de compressão de dados, balanceamento de carga e escalabilidade horizontal para sistemas de alto tráfego.`;
+          case 'Quais tecnologias você utiliza no front-end?':
+            return `Utilizo tecnologias como React, HTML5, CSS3, JavaScript, além de bibliotecas como Redux, React Router, e Styled Components para criação de interfaces interativas e responsivas.`;
+          default:
+            return `Desculpe, não entendi sua pergunta.`;
+        }
+      }
+
+
+      $(document).ready(function() {
+        // $(".dashboard").toggleClass("dashboard-compact");
+
+        // $(".dashboard-nav-dropdown-toggle").click(function () {
+        //   const parentDropdown = $(this).closest(".dashboard-nav-dropdown");
+        //   parentDropdown.toggleClass("show");
+        //   $(".dashboard-nav-dropdown").not(parentDropdown).removeClass("show");
+        // });
+        // $(".menu-toggle").click(function() {
+        //   if (mobileScreen.matches) {
+        //     $(".dashboard-nav").toggleClass("mobile-show");
+        //   } else {
+        //     $(".dashboard").toggleClass("dashboard-compact");
+        //   }
+        // });
+        
+        async function getCommitData() {
+          const username = "EduardoFidalgo";
+          const url = `https://api.github.com/search/commits?q=author:${username}`;
+
+          const response = await fetch(url, {
+            headers: { "Accept": "application/vnd.github.cloak-preview" } // Necessário para buscar commits
+          });
+          const data = await response.json();
+
+          // Criar um mapa para contar commits por data
+          const commitMap = new Map();
+
+          data.items.forEach(commit => {
+            const date = commit.commit.author.date.split("T")[0]; // Pega só a data (YYYY-MM-DD)
+            commitMap.set(date, (commitMap.get(date) || 0) + 1);
+          });
+
+          // Converter para array ordenado
+          const commitData = Array.from(commitMap.entries()).map(([date, commits]) => ({ date, commits }));
+
+            return commitData.sort((a, b) => new Date(a.date) - new Date(b.date)); // Ordena por data
+          }
+
+        async function renderChart() {
+          const commitData = await getCommitData();
+          const ctx = document.getElementById("commitChart").getContext("2d");
+
+          new Chart(ctx, {
+            type: "line",
+            data: {
+              labels: commitData.map(d => d.date),
+              datasets: [{
+                label: "Commits por dia",
+                data: commitData.map(d => d.commits),
+                borderColor: "#00000075",
+                fill: false,
+                tension: 0.3 // Suaviza a linha do gráfico
+              }]
+            },
+            options: {
+              responsive: true,
+              scales: {
+                x: { title: { display: true, text: "Data" } },
+                y: { title: { display: true, text: "Commits" } }
+              }
+            }
+          });
+        }
+
+        renderChart();
+
+        //////////////////////////////////////////
+
+        var ctx = document.getElementById('myRadarChart').getContext('2d');
+        var myRadarChart = new Chart(ctx, {
+          type: 'radar',
+          data: {
+            labels: ['PHP', 'JS', 'Python', 'GO', 'Java'],  // Linguagens que você usa
+            datasets: [{
+              label: 'Percentual de uso das linguagens (%)',
+              data: [100, 80, 30, 60, 40], // Percentuais de uso de cada linguagem
+              backgroundColor: 'rgba(0, 255, 255, 0.3)',  // Cor de fundo da área em verde claro
+              borderColor: 'rgba(0, 255, 255, 1)',  // Cor da borda em verde vibrante
+              borderWidth: 2,
+              pointBackgroundColor: '#00FF99',  // Pontos na borda das áreas (verde futurista)
+              pointBorderColor: '#00FF99',
+              pointHoverBackgroundColor: '#00FF99',
+              pointHoverBorderColor: '#00FF99',
+            }]
+          },
+          options: {
+            scales: {
+              r: {
+                min: 0,
+                max: 100,
+                ticks: {
+                  stepSize: 20,
+                  display: false // Oculta os números do eixo para um design mais limpo
+                },
+                grid: {
+                  color: 'rgba(0, 255, 255, 0.2)',  // Cor da grade do radar
+                },
+                pointLabels: {
+                  font: {
+                    size: 16,  // 🔥 AUMENTA o tamanho das labels das linguagens
+                    weight: 'bold',
+                    family: 'Arial'
+                  },
+                  color: '#00FF99'  // Mantém o verde futurista para as labels das linguagens
+                }
+              }
+            },
+            elements: {
+              line: {
+                borderWidth: 3
+              }
+            },
+            plugins: {
+              legend: {
+                position: 'top',
+                labels: {
+                  font: {
+                    size: 14,
+                    family: 'Arial',
+                    weight: 'bold'
+                  },
+                  color: '#fff'  // Cor da legenda
+                }
+              }
+            },
+            responsive: true, // Mantém responsivo
+            maintainAspectRatio: false // Permite ajustar automaticamente o tamanho
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
