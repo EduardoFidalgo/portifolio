@@ -14,6 +14,30 @@
             background-size: 30px 30px;
         }
 
+        /* Cursor com várias bolinhas */
+        .cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 10000;
+        }
+
+        .circle {
+            position: absolute;
+            background: rgba(132, 132, 132, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: background-color 0.1s ease-out;
+            will-change: transform, opacity;
+        }
+
+        /* Estilo das bolinhas */
+        .circle {
+            width: var(--diameter);
+            height: var(--diameter);
+        }
+
         .container {
             max-width: 900px;
         }
@@ -117,10 +141,56 @@ portfolio/
             </ul>
         </section>
 
+        <div class="cursor">
+            <div class="circle" style="--diameter:15px"></div>
+            <div class="circle" style="--diameter:14px"></div>
+            <div class="circle" style="--diameter:13px"></div>
+            <div class="circle" style="--diameter:12px"></div>
+            <div class="circle" style="--diameter:11px"></div>
+            <div class="circle" style="--diameter:10px"></div>
+            <div class="circle" style="--diameter:9px"></div>
+            <div class="circle" style="--diameter:8px"></div>
+        </div>
+
         <footer class="text-center mt-5">
-            <p>&copy; 2025 - Criado por [Seu Nome]</p>
+            <p>&copy; 2025 - Criado por Eduardo Fidalgo</p>
         </footer>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script>
+    // Selecionar todas as bolinhas do cursor
+        const circles = document.querySelectorAll('.circle');
+
+        document.addEventListener('mousemove', e => {
+            // Movimento das bolinhas do cursor
+            gsap.to(circles, {
+                x: e.clientX,
+                y: e.clientY,
+                stagger: 0.01, // Tempo entre as bolinhas
+                duration: 0.1, // Tempo da animação
+                ease: "power3.out"
+            });
+        });
+
+        // Detectar quando o cursor está sobre um link
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                // Alterar cor do cursor para ciano ao passar sobre link
+                circles.forEach(circle => {
+                    circle.style.backgroundColor = '#00FF99';
+                });
+            });
+
+            link.addEventListener('mouseleave', () => {
+                // Voltar à cor original do cursor
+                circles.forEach(circle => {
+                    circle.style.backgroundColor = 'rgba(163, 163, 163, 0.7)';
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

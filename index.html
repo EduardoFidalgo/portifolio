@@ -46,72 +46,27 @@
 
   <body>
     <div class="dashboard">
-      <!-- <div class="dashboard-nav">
-        <header>
-          <a href="#!" class="menu-toggle">
-            <i class="fas fa-bars"></i>
+      <div class="dashboard-app">
+        <header class="dashboard-toolbar d-flex justify-content-end p-3" style="align-items: center;">
+          <!-- Ícone de Bug à esquerda -->
+          <a href="javascript:void(0);" class="link" data-bs-toggle="modal" data-bs-target="#feedbackModal" title="Reportar Bug"
+            aria-label="Reportar Bug">
+            <i class="fa fa-bug" aria-hidden="true" style="font-size: 23px;"></i>
           </a>
-          <a href="#" class="brand-logo">
-            <i class="fas fa-anchor"></i>
-            <span>BRAND</span>
+        
+          <!-- Link para a documentação -->
+          <a href="#" class="link" onclick="window.open(window.location.origin + '/documentation.html', '_blank');"
+            class="buttonDocumentation">
+            documentação
+          </a>
+        
+          <!-- WhatsApp -->
+          <a href="https://wa.me/5513974267888" target="_blank" class="buttonWhatsapp">
+            <i class="fab fa-whatsapp" style="font-size: 23px;"></i> entrar em contato
+            <i class="fa fa-arrow-right" style="font-size: 15px; font-weight: 500;" aria-hidden="true"></i>
           </a>
         </header>
-        <nav class="dashboard-nav-list">
-          <a href="#" class="dashboard-nav-item">
-            <i class="fas fa-home"></i> Home </a>
-          <a href="#" class="dashboard-nav-item active">
-            <i class="fas fa-tachometer-alt"></i> dashboard </a>
-          <a href="#" class="dashboard-nav-item">
-            <i class="fas fa-file-upload"></i> Upload </a>
-          <div class="dashboard-nav-dropdown">
-            <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
-              <i class="fas fa-photo-video"></i> Media </a>
-            <div class="dashboard-nav-dropdown-menu">
-              <a href="#" class="dashboard-nav-dropdown-item">All</a>
-              <a href="#" class="dashboard-nav-dropdown-item">Recent</a>
-              <a href="#" class="dashboard-nav-dropdown-item">Images</a>
-              <a href="#" class="dashboard-nav-dropdown-item">Video</a>
-            </div>
-          </div>
-          <div class="dashboard-nav-dropdown">
-            <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
-              <i class="fas fa-users"></i> Users </a>
-            <div class="dashboard-nav-dropdown-menu">
-              <a href="#" class="dashboard-nav-dropdown-item">All</a>
-              <a href="#" class="dashboard-nav-dropdown-item">Subscribed</a>
-              <a href="#" class="dashboard-nav-dropdown-item">Non-subscribed</a>
-              <a href="#" class="dashboard-nav-dropdown-item">Banned</a>
-              <a href="#" class="dashboard-nav-dropdown-item">New</a>
-            </div>
-          </div>
-          <div class="dashboard-nav-dropdown">
-            <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
-              <i class="fas fa-money-check-alt"></i> Payments </a>
-            <div class="dashboard-nav-dropdown-menu">
-              <a href="#" class="dashboard-nav-dropdown-item">All</a>
-              <a href="#" class="dashboard-nav-dropdown-item">Recent</a>
-              <a href="#" class="dashboard-nav-dropdown-item"> Projections</a>
-            </div>
-          </div>
-          <a href="#" class="dashboard-nav-item">
-            <i class="fas fa-cogs"></i> Settings </a>
-          <a href="#" class="dashboard-nav-item">
-            <i class="fas fa-user"></i> Profile </a>
-          <div class="nav-item-divider"></div>
-          <a href="#" class="dashboard-nav-item">
-            <i class="fas fa-sign-out-alt"></i> Logout </a>
-        </nav>
-      </div> -->
-      <div class="dashboard-app">
-      <header class=" dashboard-toolbar d-flex justify-content-end p-3" style="align-items: center;">
-        <a href="#" class="link" onclick="window.open(window.location.origin + '/documentation.html', '_blank');"
-          class="buttonDocumentation"> documentação
-        </a>
-        <a href="https://wa.me/5513974267888" target="_blank" class="buttonWhatsapp">
-          <i class="fab fa-whatsapp" style="font-size: 23px;"></i> entrar em contato
-          <i class="fa fa-arrow-right" style="font-size: 15px; font-weight: 500;" aria-hidden="true"></i>
-        </a>
-      </header>
+
         <div class="dashboard-content">
           <div class="hero container">
             <div class="row ">
@@ -125,7 +80,7 @@
                </p>
                 <div class="row"  style="margin-top: 30px;">
                   <div class="col-md-12" style="text-align: center;">
-                    <a href="#!">
+                    <a href="#about">
                       <i class="fas fa-chevron-double-down fa-2x" style="color: #515151;"></i>
                     </a>
                   </div>
@@ -153,7 +108,7 @@
               </div>
               <div class="col-md-7">
                 <div class="card">
-                  <div class="card-body">
+                  <div class="card-body" id="about">
                     <h4 class="card-title" style="font-weight: bold;">Eduardo Fidalgo</h4>
                     <p class="card-text" style="text-align: left;">
                       Sou um Desenvolvedor Full-Stack com expertise em Java + SpringBoot, PHP, JavaScript, GoLang e Python. Ao longo
@@ -470,7 +425,7 @@
                       <i class="fab fa-github fa-2x"></i>
                     </a>
                     <br>
-                  <h6 style="color: grey; margin-top: 20px;">@2025 - Copyright, Criado por: Eduardo Fidalgo</h6>
+                    <p style="color: grey; margin-top: 20px">&copy; 2025 - Criado por Eduardo Fidalgo</p>
                 </div>
               </div>
             </div>
@@ -510,10 +465,13 @@
 
     </div>
 
-    <!-- Modal -->
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+            </button>
+          </div>
           <div class="modal-body text-center">
             <img id="modalImage" src="" alt="Imagem do Projeto" class="img-fluid">
           </div>
@@ -521,9 +479,55 @@
       </div>
     </div>
 
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="feedbackModalLabel">Dê seu feedback sobre nossa página</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="https://formspree.io/f/xblgljjk" method="POST">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="subject" class="form-label">Assunto</label>
+                <input type="text" class="form-control" id="subject" name="subject" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Descrição</label>
+                <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+              </div>
+              <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4" style="text-align: right;">
+                  <button type="submit"  class="btn btn-dark">Reportar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cursor">
+      <div class="circle" style="--diameter:15px"></div>
+      <div class="circle" style="--diameter:14px"></div>
+      <div class="circle" style="--diameter:13px"></div>
+      <div class="circle" style="--diameter:12px"></div>
+      <div class="circle" style="--diameter:11px"></div>
+      <div class="circle" style="--diameter:10px"></div>
+      <div class="circle" style="--diameter:9px"></div>
+      <div class="circle" style="--diameter:8px"></div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
   <script>
       const mobileScreen = window.matchMedia("(max-width: 992px)");
@@ -583,11 +587,11 @@
       }
 
     $(document).ready(function () {
-      $('.custom-card').click(function () {
-        var imgSrc = $(this).attr('data-img');
-        $('#modalImage').attr('src', imgSrc);
+        $('.custom-card').click(function () {
+          var imgSrc = $(this).attr('data-img');
+          $('#modalImage').attr('src', imgSrc);
+        });
       });
-    });
 
       $(document).ready(function() {
         // $(".dashboard").toggleClass("dashboard-compact");
@@ -720,7 +724,38 @@
           }
         });
       });
+ 
 
+        // Selecionar todas as bolinhas do cursor
+        const circles = document.querySelectorAll('.circle');
+
+        document.addEventListener('mousemove', e => {
+          // Movimento das bolinhas do cursor
+          gsap.to(circles, {
+            x: e.clientX,
+            y: e.clientY,
+            stagger: 0.01, // Tempo entre as bolinhas
+            duration: 0.1, // Tempo da animação
+            ease: "power3.out"
+          });
+        });
+
+        // Detectar quando o cursor está sobre um link
+        document.querySelectorAll('a').forEach(link => {
+          link.addEventListener('mouseenter', () => {
+            // Alterar cor do cursor para ciano ao passar sobre link
+            circles.forEach(circle => {
+              circle.style.backgroundColor = '#00FF99';
+            });
+          });
+
+          link.addEventListener('mouseleave', () => {
+            // Voltar à cor original do cursor
+            circles.forEach(circle => {
+              circle.style.backgroundColor = 'rgba(163, 163, 163, 0.7)';
+            });
+          });
+        });
     </script>
   </body>
 </html>
