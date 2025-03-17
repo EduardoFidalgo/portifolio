@@ -4,6 +4,17 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+/* Animação para desaparecer suavemente */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.hidden {
+    display: none !important;
+}
+
 /* Estiliza a tela de loading */
 #loading-screen {
     position: fixed;
