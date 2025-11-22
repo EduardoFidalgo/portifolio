@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /documentation.html
+
+Allow: /
+Allow: /index.html
+
+Sitemap: https://eduardofidalgo.com.br/sitemap.xml

@@ -1,0 +1,76 @@
+name: Commit Report (Last 15 days)
+
+on:
+  schedule:
+    - cron: "0 2 * * *"  # roda diariamente 02:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  commits:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout current repo
+        uses: actions/checkout@v4
+
+      - name: List all repositories (public + private)
+        id: repos
+        run: |
+          curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+               "https://api.github.com/user/repos?per_page=200&type=owner" \
+               > repos.json
+
+          echo "Repos encontrados:"
+          cat repos.json
+
+      - name: Count commits from last 15 days
+        id: counter
+        run: |
+          DAYS=15
+          START_DATE=$(date -d "$DAYS days ago" +"%Y-%m-%d")
+          END_DATE=$(date +"%Y-%m-%d")
+
+          echo "Iniciando contagem de commits entre $START_DATE e $END_DATE"
+
+          TOTAL=0
+          RESULTS="["
+
+          for REPO in $(jq -r '.[].clone_url' repos.json); do
+            NAME=$(jq -r ".[] | select(.clone_url==\"$REPO\") | .name" repos.json)
+
+            echo "Processando: $NAME"
+
+            git clone --quiet "$REPO"
+            cd "$NAME"
+
+            COUNT=$(git log --since="$START_DATE" --until="$END_DATE" --pretty=format:"%h" | wc -l)
+            TOTAL=$((TOTAL + COUNT))
+
+            RESULTS="$RESULTS {\"repo\":\"$NAME\",\"commits\":$COUNT},"
+
+            cd ..
+          done
+
+          # remove última vírgula
+          RESULTS="${RESULTS::-1}]"
+
+          echo "$RESULTS" > commits_by_repo.json
+
+          # gera o resumo final
+          echo "{\"start\": \"$START_DATE\", \"end\": \"$END_DATE\", \"total_commits\": $TOTAL, \"repos\": $RESULTS}" \
+            > commits.json
+
+          echo "Arquivo commits.json gerado:"
+          cat commits.json
+
+      - name: Publish JSON to public repo
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: main
+          external_repository: EduardoFidalgo/portifolio
