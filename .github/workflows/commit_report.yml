@@ -13,62 +13,42 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout current repo
-        uses: actions/checkout@v4
-
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
 
-      - name: List all repositories (public + private)
-        id: repos
+      - name: Fetch repositories
         run: |
-          curl -s -H "Authorization: token ${{ secrets.PAT }}" \
-               "https://api.github.com/user/repos?per_page=200&type=owner" \
-               > repos.json
+          curl -s \
+            -H "Authorization: token ${{ secrets.PAT }}" \
+            "https://api.github.com/user/repos?per_page=200&type=owner" \
+            > repos.json
 
-          echo "Repos encontrados:"
-          jq '.[].full_name' repos.json
-
-      - name: Setup safe git credentials
-        run: |
-          git config --global url."https://oauth2:${{ secrets.PAT }}@github.com/".insteadOf "https://github.com/"
-
-      - name: Count commits from last 15 days
-        id: counter
+      - name: Count commits from API (FAST)
         run: |
           DAYS=15
-          START_DATE=$(date -d "$DAYS days ago" +"%Y-%m-%d")
-          END_DATE=$(date +"%Y-%m-%d")
-
-          echo "Contando commits entre $START_DATE e $END_DATE"
+          SINCE=$(date -d "$DAYS days ago" --iso-8601=seconds)
+          UNTIL=$(date --iso-8601=seconds)
 
           TOTAL=0
           RESULTS="["
 
           for FULLNAME in $(jq -r '.[].full_name' repos.json); do
-            NAME=$(echo "$FULLNAME" | cut -d'/' -f2)
+            echo "Checking $FULLNAME"
 
-            echo "Processando: $NAME"
+            COUNT=$(curl -s \
+              -H "Authorization: token ${{ secrets.PAT }}" \
+              "https://api.github.com/repos/$FULLNAME/commits?author=${{ github.actor }}&since=$SINCE&until=$UNTIL&per_page=200" \
+              | jq length)
 
-            git clone --quiet https://github.com/$FULLNAME.git
-            cd "$NAME"
-
-            COUNT=$(git log --since="$START_DATE" --until="$END_DATE" --pretty=format:"%h" | wc -l)
             TOTAL=$((TOTAL + COUNT))
+            REPO=$(echo $FULLNAME | cut -d'/' -f2)
 
-            RESULTS="$RESULTS {\"repo\":\"$NAME\",\"commits\":$COUNT},"
-
-            cd ..
+            RESULTS="$RESULTS {\"repo\":\"$REPO\",\"commits\":$COUNT},"
           done
 
           RESULTS="${RESULTS::-1}]"
 
-          echo "$RESULTS" > commits_by_repo.json
-
-          echo "{\"start\":\"$START_DATE\",\"end\":\"$END_DATE\",\"total_commits\":$TOTAL,\"repos\":$RESULTS}" > commits.json
-
-          echo "Resultado final:"
-          cat commits.json
+          echo "{\"total_commits\":$TOTAL,\"repos\":$RESULTS}" > commits.json
 
       - name: Publish JSON to public repo
         uses: peaceiris/actions-gh-pages@v3
