@@ -46,45 +46,63 @@
 
   <body>
     <div id="loading-screen">
-      <p id="message">Para melhor experiência, visualização pelo PC é recomendado.</p>
+      <p id="message" data-lang="loading-message">Para melhor experiência, visualização pelo PC é recomendado.</p>
       <div class="spinner"></div>
-      <p>Carregando...</p>
+      <p data-lang="loading-text">Carregando...</p>
     </div>
 
     <!-- Mensagem Flutuante -->
     <div id="floatingMessage" style="z-index: 999;"
       class="position-fixed bottom-0 start-50 translate-middle-x bg-white text-dark p-2 shadow-lg text-center w-100 w-md-50 w-lg-30 opacity-75">
-      <p class="mb-2 small" style="padding: 10px;">Seu feedback é essencial! Se puder, avalie meu trabalho e/ou a página deixando um elogio,
+      <p class="mb-2 small" style="padding: 10px;" data-lang="float-message">Seu feedback é essencial! Se puder, avalie meu trabalho e/ou a página deixando um elogio,
         sugestão ou relate um
         problema.<br> Sua opinião me ajuda a melhorar continuamente. ;)</p>
 
       <div class="d-flex justify-content-center gap-2">
-        <button id="laterButton" class="btn btn-outline-dark btn-sm rounded-pill px-3" style="border: transparent">Depois</button>
-        <button id="okButton" class="btn btn-dark btn-sm rounded-pill px-3">Deixar feedback</button>
+        <button id="laterButton" class="btn btn-outline-dark btn-sm rounded-pill px-3" style="border: transparent" data-lang="float-later-btn">Depois</button>
+        <button id="okButton" class="btn btn-dark btn-sm rounded-pill px-3" data-lang="float-ok-btn">Deixar feedback</button>
       </div>
     </div>
 
     <div id="content" style="display: none;"></div>
       <div class="dashboard">
         <div class="dashboard-app">
-          <header class="dashboard-toolbar d-flex justify-content-end p-3" style="align-items: center;">
+          <header class="dashboard-toolbar p-3" style="display: flex; justify-content: space-between; align-items: center;">
             <!-- Ícone de Bug à esquerda -->
-            <a href="javascript:void(0);" class="link" data-bs-toggle="modal" data-bs-target="#feedbackModal" title="Reportar Bug"
-              aria-label="Reportar Bug">
-              <i class="fa fa-bug" aria-hidden="true" style="font-size: 23px;"></i>
-            </a>
+            <div style="display: flex; align-items: center;">
+              <a href="javascript:void(0);" class="link" data-bs-toggle="modal" data-bs-target="#feedbackModal" title="Reportar Bug"
+                aria-label="Reportar Bug">
+                <i class="fa fa-bug" aria-hidden="true" style="font-size: 23px;"></i>
+              </a>
+            </div>
+
+            <!-- Grupo de elementos à direita -->
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <!-- Seletor de Idioma -->
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <button onclick="changeLanguage('pt')" class="btn btn-link p-0" title="Português" style="border: none; background: transparent;">
+                  <img src="./img/br-icon.png" alt="Português" style="width: 32px; height: 32px; cursor: pointer; border-radius: 4px;">
+                </button>
+                <button onclick="changeLanguage('es')" class="btn btn-link p-0" title="Español" style="border: none; background: transparent;">
+                  <img src="./img/sp-icon.png" alt="Español" style="width: 32px; height: 32px; cursor: pointer; border-radius: 4px;">
+                </button>
+                <button onclick="changeLanguage('en')" class="btn btn-link p-0" title="English" style="border: none; background: transparent;">
+                  <img src="./img/en-icon.png" alt="English" style="width: 32px; height: 32px; cursor: pointer; border-radius: 4px;">
+                </button>
+              </div>
           
-            <!-- Link para a documentação -->
-            <a href="#" class="link" onclick="window.open(window.location.origin + '/documentation.html', '_blank');"
-              class="buttonDocumentation">
-              documentação
-            </a>
+              <!-- Link para a documentação -->
+              <a href="#" class="link" onclick="window.open(window.location.origin + '/documentation.html', '_blank');"
+                class="buttonDocumentation" data-lang="doc-link">
+                documentação
+              </a>
           
-            <!-- WhatsApp -->
-            <a href="https://wa.me/5513974267888" target="_blank" class="buttonWhatsapp">
-              <i class="fab fa-whatsapp" style="font-size: 23px;"></i> entrar em contato
-              <i class="fa fa-arrow-right" style="font-size: 15px; font-weight: 500;" aria-hidden="true"></i>
-            </a>
+              <!-- WhatsApp -->
+              <a href="https://wa.me/5513974267888" target="_blank" class="buttonWhatsapp">
+                <i class="fab fa-whatsapp" style="font-size: 23px;"></i> <span data-lang="contact-btn">entrar em contato</span>
+                <i class="fa fa-arrow-right" style="font-size: 15px; font-weight: 500;" aria-hidden="true"></i>
+              </a>
+            </div>
           </header>
 
           <div class="dashboard-content">
@@ -92,9 +110,9 @@
               <div class="row ">
                 <div class="col-md-6 text-container">
                   <h1 class="title">
-                    <b>Moldando o Futuro com Tecnologia e Inovação</b>
+                    <b data-lang="hero-title">Moldando o Futuro com Tecnologia e Inovação</b>
                   </h1>
-                  <p class="description"> 
+                  <p class="description" data-lang="hero-desc"> 
                     Com uma visão focada no futuro, crio soluções digitais inovadoras que conectam o presente ao amanhã. Meu trabalho
                     transforma ideias em experiências imersivas, elevando a experiência digital e antecipando as necessidades do futuro.
                 </p>
@@ -130,7 +148,7 @@
                   <div class="card">
                     <div class="card-body" id="about">
                       <h4 class="card-title" style="font-weight: bold;">Eduardo Fidalgo</h4>
-                      <p class="card-text" style="text-align: left;">
+                      <p class="card-text" style="text-align: left;" data-lang="about-text">
                         Sou um Desenvolvedor Full-Stack que atua na criação de sistemas completos, APIs e interfaces modernas. Gosto de resolver
                         problemas de forma simples e trabalhar com diferentes tecnologias para entregar bons resultados.
                         <br><br>
@@ -168,13 +186,13 @@
                       <div class="timeline-item">
                         <img src="./img/letmein.png" alt="LETMEIN - logo" style="width: 100px!important; height: 100px!important;" class="timeline-logo">
                         <div class="timeline-content">
-                          <h4>Desenvolvedor Fullstack</h4>
-                          <p class="text-muted" style="margin-top: 5px;">nov de 2021 - (presente)</p>
-                          <p class="mb-1">➥ Arquitetura e desenvolvimento de sistemas complexos do zero</p>
-                          <p class="mb-1">➥ Plataforma com IA para redes escolares</p>
-                          <p class="mb-1">➥ Sistema de gerenciamento logístico com rastreamento</p>
-                          <p class="mb-1">➥ Otimização de performance em sistemas legados</p>
-                          <p class="mb-1">➥ Dashboards WebSocket, APIs RESTful e Microserviços</p>
+                          <h4 data-lang="job1-title">Desenvolvedor Fullstack</h4>
+                          <p class="text-muted" style="margin-top: 5px;" data-lang="job1-period">nov de 2021 - (presente)</p>
+                          <p class="mb-1" data-lang="job1-desc1">➥ Arquitetura e desenvolvimento de sistemas complexos do zero</p>
+                          <p class="mb-1" data-lang="job1-desc2">➥ Plataforma com IA para redes escolares</p>
+                          <p class="mb-1" data-lang="job1-desc3">➥ Sistema de gerenciamento logístico com rastreamento</p>
+                          <p class="mb-1" data-lang="job1-desc4">➥ Otimização de performance em sistemas legados</p>
+                          <p class="mb-1" data-lang="job1-desc5">➥ Dashboards WebSocket, APIs RESTful e Microserviços</p>
                           <small class="text-muted">PHP | Laravel | Node.js | PostgreSQL | WebSocket | Docker | IA</small>
                         </div>
                       </div>
@@ -183,12 +201,12 @@
                       <div class="timeline-item">
                         <img src="./img/tip.png" alt="TIP - logo" style="width: 100px!important; height: 100px!important;" class="timeline-logo">
                         <div class="timeline-content">
-                          <h4>Desenvolvedor Fullstack (Temporário)</h4>
-                          <p class="text-muted" style="margin-top: 5px;">jun de 2024 - ago de 2024</p>
-                          <p class="mb-1">➥ Reestruturação de sistema legado PHP para automação financeira</p>
-                          <p class="mb-1">➥ Redução significativa do tempo manual das equipes</p>
-                          <p class="mb-1">➥ Integração de APIs e sincronização de dados</p>
-                          <p class="mb-1">➥ Alinhamento de requisitos com clientes e times técnicos</p>
+                          <h4 data-lang="job2-title">Desenvolvedor Fullstack (Temporário)</h4>
+                          <p class="text-muted" style="margin-top: 5px;" data-lang="job2-period">jun de 2024 - ago de 2024</p>
+                          <p class="mb-1" data-lang="job2-desc1">➥ Reestruturação de sistema legado PHP para automação financeira</p>
+                          <p class="mb-1" data-lang="job2-desc2">➥ Redução significativa do tempo manual das equipes</p>
+                          <p class="mb-1" data-lang="job2-desc3">➥ Integração de APIs e sincronização de dados</p>
+                          <p class="mb-1" data-lang="job2-desc4">➥ Alinhamento de requisitos com clientes e times técnicos</p>
                           <small class="text-muted">PHP | JavaScript | MySQL | APIs | Git | Docker</small>
                         </div>
                       </div>
@@ -199,11 +217,11 @@
                   <!-- Formação Acadêmica e Cursos -->
                   <div class="col-md-6">
                     <div class="info-section">
-                      <h2>Graduação</h2>
+                      <h2 data-lang="education-title">Graduação</h2>
                       <p><strong>Análise e Desenvolvimento de Sistemas</strong>  Estácio <strong>2025</strong> ◄</p>
                       <p><strong>Curso Técnico Programador WEB</strong>  SENAC <strong>2021</strong> ◄</p>
                       <br>
-                      <h2>Cursos</h2>
+                      <h2 data-lang="courses-title">Cursos</h2>
                       <p>Laravel Completo - O mais poderoso Framework PHP  <strong>UDEMY</strong> ◄</p>
                       <p>Laravel 10 - Do básico ao avançado  <strong>UDEMY</strong> ◄</p>
                       <p>Projeto Completo NodeJS, React, React Native, TypeScript  <strong>UDEMY</strong> ◄</p>
@@ -222,7 +240,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <canvas id="commitChart"></canvas>
-                      <p style="text-align: center; margin-top: 10px; color: #666; font-size: 14px;">*Apenas commits em repositórios públicos.</p>
+                      <p style="text-align: center; margin-top: 10px; color: #666; font-size: 14px;" data-lang="commits-note">Apenas commits em repositórios públicos</p>
                     </div>
                   </div>
                 </div>
@@ -249,7 +267,7 @@
             </div>
             
             <div class="container" style="margin-top: 10%;">
-              <h5 style="text-align: center; font-weight: bold; margin-top: 20px; text-transform: uppercase; font-size:15px;">Principais Projetos:</h5>
+              <h5 style="text-align: center; font-weight: bold; margin-top: 20px; text-transform: uppercase; font-size:15px;" data-lang="projects-title">Principais Projetos:</h5>
 
               <div class="row justify-content-center m-0">
                 <div class="col-md-3 col-sm-6">
@@ -259,8 +277,8 @@
                     </div>
                     <div class="card-footer">
                       <div class="user-info">
-                        <strong>DeliverySync - Plataforma SaaS</strong><br>
-                        <p>Solução SaaS para empresas de delivery com menus digitais, integração WhatsApp (API Meta), sistema de pagamento (Asaas - Pix/Cartão), painel administrativo completo e acompanhamento de pedidos em tempo real. 100% funcional em produção.</p>
+                        <strong data-lang="project1-title">DeliverySync - Plataforma SaaS</strong><br>
+                        <p data-lang="project1-desc">Solução SaaS para empresas de delivery com menus digitais, integração WhatsApp (API Meta), sistema de pagamento (Asaas - Pix/Cartão), painel administrativo completo e acompanhamento de pedidos em tempo real. 100% funcional em produção.</p>
                         <span style="color: black;">@Backend</span>
                         <span style="color: black;">@Frontend</span>
                         <span style="color: black;">@SaaS</span>
@@ -276,8 +294,8 @@
                     </div>
                     <div class="card-footer">
                       <div class="user-info">
-                        <strong>Java SpringBoot - API RESTful</strong><br>
-                        <p>API desenvolvida com JAVA + SpringBoot seguindo os princípios e restrições de arquitetura de software
+                        <strong data-lang="project2-title">Java SpringBoot - API RESTful</strong><br>
+                        <p data-lang="project2-desc">API desenvolvida com JAVA + SpringBoot seguindo os princípios e restrições de arquitetura de software
                           RESTful, utilizando banco de
                           dados PostgresSQL.</p>
                         <span style="color: black;">@Backend</span>
@@ -293,8 +311,8 @@
                     </div>
                     <div class="card-footer">
                       <div class="user-info">
-                        <strong>Software de Segurança - Setor Financeiro</strong><br>
-                        <p>Plataforma segura para compartilhamento de relatórios financeiros e documentos sensíveis. Interface segura para Power BI, painel administrativo, gestão de documentos e comunicados. Foco em privacidade e sigilo no tráfego de dados. Uso corporativo em empresa financeira.</p>
+                        <strong data-lang="project3-title">Software de Segurança - Setor Financeiro</strong><br>
+                        <p data-lang="project3-desc">Plataforma segura para compartilhamento de relatórios financeiros e documentos sensíveis. Interface segura para Power BI, painel administrativo, gestão de documentos e comunicados. Foco em privacidade e sigilo no tráfego de dados. Uso corporativo em empresa financeira.</p>
                         <span style="color: black;">@Backend</span>
                         <span style="color: black;">@Frontend</span>
                         <span style="color: black;">@Segurança</span>
@@ -310,8 +328,8 @@
                     </div>
                     <div class="card-footer">
                       <div class="user-info">
-                        <strong>Python/Excel - Automação</strong><br>
-                        <p>O script Python atualiza um arquivo Excel com as cotações de USD, EUR e BTC em BRL usando uma API e a
+                        <strong data-lang="project4-title">Python/Excel - Automação</strong><br>
+                        <p data-lang="project4-desc">O script Python atualiza um arquivo Excel com as cotações de USD, EUR e BTC em BRL usando uma API e a
                           biblioteca pandas.
                           Ele é executado com atualização constante.</p>
                         <span style="color: black;">@Automação</span>
@@ -327,8 +345,8 @@
                     </div>
                     <div class="card-footer">
                       <div class="user-info">
-                        <strong>GOlang - Webscrapping</strong><br>
-                        <p>Projeto desenvolvido com o objetivo de capturar dados de uma determinada página web e disponibilizar os
+                        <strong data-lang="project5-title">GOlang - Webscrapping</strong><br>
+                        <p data-lang="project5-desc">Projeto desenvolvido com o objetivo de capturar dados de uma determinada página web e disponibilizar os
                           dados por meio
                           de uma API.</p>
                         <span style="color: black;">@Webscrapping</span>
@@ -368,7 +386,7 @@
 
               <div class="text-center mt-4">
                 <a target="_blank" href="https://github.com/EduardoFidalgo?tab=repositories">
-                  <button class="btn btn-dark">Ver mais +</button>
+                  <button class="btn btn-dark" data-lang="see-more-btn">Ver mais +</button>
                 </a>
               </div>
             </div>
@@ -389,27 +407,27 @@
                     style="border: transparent;">
                     <!-- Título -->
                     <h2 class="text-light mb-4 bold text-center"
-                      style="font-family: 'Roboto', sans-serif; font-weight: bold; font-size: 1.8rem; padding: 20px;">
+                      style="font-family: 'Roboto', sans-serif; font-weight: bold; font-size: 1.8rem; padding: 20px;" data-lang="form-title">
                       Vamos construir o amanhã, juntos!
                     </h2>
                     <hr>
                     <!-- Nome -->
                     <label class="d-block mb-4 text-left mt-4">
-                      <span class="form-label d-block text-light">Seu nome completo:</span>
+                      <span class="form-label d-block text-light" data-lang="form-name-label">Seu nome completo:</span>
                       <input name="name" type="text" class="form-control text-light border-secondary bg-transparent"
                         placeholder="Jon Joe.." required />
                     </label>
                 
                     <!-- Email -->
                     <label class="d-block mb-4 text-left">
-                      <span class="form-label d-block text-light">Email principal:</span>
+                      <span class="form-label d-block text-light" data-lang="form-email-label">Email principal:</span>
                       <input name="email" type="email" class="form-control border-secondary bg-transparent text-light"
                         placeholder="seu_email@example.com" required />
                     </label>
                 
                     <!-- Mensagem -->
                     <label class="d-block mb-4 text-left">
-                      <span class="form-label d-block text-light">Proposta sugerida:</span>
+                      <span class="form-label d-block text-light" data-lang="form-message-label">Proposta sugerida:</span>
                       <textarea name="message" class="form-control border-secondary bg-transparent text-light" rows="3"
                         placeholder="Insira a mensagem desejada.." required></textarea>
                     </label>
@@ -417,7 +435,7 @@
                     <!-- Botão de Envio -->
                     <div class="mb-3" style="text-align: right; justify-content: right;">
                       <button type="submit" class="btn"
-                        style="background-color: #777; color: #fff; border: none; border-radius: 30px; padding: 12px 60px; font-size: 1.1rem; transition: background-color 0.3s;">
+                        style="background-color: #777; color: #fff; border: none; border-radius: 30px; padding: 12px 60px; font-size: 1.1rem; transition: background-color 0.3s;" data-lang="form-submit-btn">
                         Enviar
                       </button>
                     </div>
@@ -465,12 +483,12 @@
           <div class="messagebox">
             <!-- Mensagens do chat -->
             <div class="chat-message">
-              <p><strong>Chatbot:</strong> Como posso te ajudar hoje?</p>
+              <p><strong>Chatbot:</strong> <span data-lang="chatbot-greeting">Como posso te ajudar hoje?</span></p>
             </div>
           </div>
         
           <div class="chat-input">
-            <input type="text" id="message-filter" placeholder="Filtre sua pergunta..." onkeyup="filterMessages()" />
+            <input type="text" id="message-filter" data-lang-placeholder="chatbot-placeholder" placeholder="Filtre sua pergunta..." onkeyup="filterMessages()" />
           </div>
         
           <div class="message-options" id="message-options">
@@ -507,28 +525,28 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="feedbackModalLabel">Deixe seu feedback</h5>
+              <h5 class="modal-title" id="feedbackModalLabel" data-lang="feedback-title">Deixe seu feedback</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <form action="https://formspree.io/f/xblgljjk" method="POST">
                 <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
+                  <label for="email" class="form-label" data-lang="feedback-email-label">Email</label>
                   <input type="email" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="mb-3">
-                  <label for="subject" class="form-label">Assunto</label>
+                  <label for="subject" class="form-label" data-lang="feedback-subject-label">Assunto</label>
                   <input type="text" class="form-control" id="subject" name="subject" required>
                 </div>
                 <div class="mb-3">
-                  <label for="message" class="form-label">Descrição</label>
+                  <label for="message" class="form-label" data-lang="feedback-desc-label">Descrição</label>
                   <textarea class="form-control" id="description" name="message" rows="3" required></textarea>
                 </div>
                 <div class="row">
                   <div class="col-md-4"></div>
                   <div class="col-md-4"></div>
                   <div class="col-md-4" style="text-align: right;">
-                    <button type="submit"  class="btn btn-dark">Reportar</button>
+                    <button type="submit"  class="btn btn-dark" data-lang="feedback-submit-btn">Reportar</button>
                   </div>
                 </div>
               </form>
