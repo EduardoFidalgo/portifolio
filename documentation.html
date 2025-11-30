@@ -89,38 +89,59 @@
             <h2 class="section-title">1. Introdução</h2>
             <img src="./preview.png" alt="Preview do Projeto" class="preview-img">
             <p>Este portfólio foi desenvolvido para refletir um design moderno, minimalista e futurista, destacando
-                minha carreira, projetos e habilidades.</p>
+                minha carreira, projetos e habilidades com suporte completo a múltiplos idiomas.</p>
             <p>As principais tecnologias utilizadas foram:</p>
             <ul>
-                <li><strong>Bootstrap 5.3.x</strong> - Para estilização responsiva e componentes.</li>
+                <li><strong>Bootstrap 5.2.3</strong> - Para estilização responsiva e componentes.</li>
                 <li><strong>jQuery 3.6.x</strong> - Para manipulação dinâmica do DOM e interações.</li>
-                <li><strong>CSS</strong> - Para customizações avançadas de estilo.</li>
-                <li><strong>JavaScript</strong> - Para o chatbot interativo e outras funções.</li>
+                <li><strong>Chart.js</strong> - Para visualização de dados em gráficos interativos.</li>
+                <li><strong>GSAP</strong> - Para animações avançadas do cursor customizado.</li>
+                <li><strong>Font Awesome 5.10</strong> - Para ícones e elementos visuais.</li>
+                <li><strong>CSS3 & JavaScript ES6</strong> - Para customizações avançadas e interatividade.</li>
+                <li><strong>Sistema de Tradução Multilíngue</strong> - Suporte para Português, Espanhol e Inglês.</li>
             </ul>
         </section>
 
         <section>
             <h2 class="section-title">2. Instalação</h2>
             <p>Para rodar o projeto localmente, siga os passos abaixo:</p>
-            <pre>git clone https://github.com/seu-repositorio/portfolio.git
-cd portfolio
-open index.html</pre>
+            <pre>git clone https://github.com/EduardoFidalgo/portifolio.git
+cd portifolio
+# Abra o index.html no seu navegador preferido</pre>
+            <p><strong>Nota:</strong> Não é necessário instalar dependências, pois todas as bibliotecas são carregadas via CDN.</p>
         </section>
 
         <section>
             <h2 class="section-title">3. Estrutura do Projeto</h2>
             <p>O projeto segue a seguinte organização:</p>
             <pre>
-portfolio/
-│── index.html  (Página principal)
-│── assets/
-│   ├── css/
-│   │   ├── style.css  (Estilos customizados)
-│   ├── js/
-│   │   ├── script.js  (Interações e chatbot)
-│   ├── img/
-│── preview.png (Imagem de preview do projeto)
-│── README.md  (Documentação do projeto)
+portifolio/
+│── index.html              (Página principal do portfólio)
+│── documentation.html      (Esta documentação)
+│── robots.txt             (Configuração para crawlers)
+│── sitemap.xml            (Mapa do site para SEO)
+│
+│── scripts/
+│   └── scripts.js         (Lógica do chatbot, traduções e gráficos)
+│
+│── styles/
+│   └── styles.css         (Estilos customizados)
+│
+│── img/
+│   ├── robot.svg          (Imagem hero)
+│   ├── strangeRobot.svg   (Imagem radar section)
+│   ├── handGod.svg        (Imagem formulário)
+│   ├── IA.svg             (Ícone do chatbot)
+│   ├── br-icon.png        (Bandeira Brasil)
+│   ├── sp-icon.png        (Bandeira Espanha)
+│   ├── en-icon.png        (Bandeira EUA)
+│   ├── letmein.png        (Logo empresa)
+│   ├── tip.png            (Logo empresa)
+│   ├── LAR.svg            (Ícone Laravel)
+│   ├── JAVA.svg           (Ícone Java)
+│   ├── PY.svg             (Ícone Python)
+│   ├── GO.svg             (Ícone Golang)
+│   └── favicon.png        (Favicon do site)
             </pre>
         </section>
 
@@ -128,32 +149,199 @@ portfolio/
             <h2 class="section-title">4. Funcionalidades</h2>
             <p>Principais recursos do portfólio:</p>
             <ul>
-                <li>📌 <strong>Layout futurista</strong> com design sofisticado.</li>
-                <li>🤖 <strong>Chatbot interativo</strong> para simular entrevistas.</li>
-                <li>⚡ <strong>SEO otimizado</strong> para melhor rankeamento.</li>
-                <li>📱 <strong>Responsivo</strong> para todos os dispositivos.</li>
+                <li>🌍 <strong>Sistema Multilíngue</strong> - Suporte completo para Português, Espanhol e Inglês com persistência de preferência.</li>
+                <li>🤖 <strong>Chatbot Interativo</strong> - Perguntas e respostas predefinidas em 3 idiomas com interface dinâmica.</li>
+                <li>📊 <strong>Gráficos Interativos</strong> - Visualização de commits no GitHub e percentual de uso de linguagens com Chart.js.</li>
+                <li>🎨 <strong>Cursor Customizado</strong> - Animação fluida com GSAP e efeito de múltiplas bolinhas.</li>
+                <li>📱 <strong>Design Responsivo</strong> - Layout adaptável para todos os dispositivos (mobile, tablet, desktop).</li>
+                <li>⚡ <strong>SEO Otimizado</strong> - Meta tags completas, Open Graph, Twitter Cards e sitemap.xml.</li>
+                <li>💾 <strong>LocalStorage</strong> - Salva preferências do usuário (idioma, mensagens visualizadas).</li>
+                <li>📝 <strong>Formulário de Contato</strong> - Integração com Formspree para receber mensagens.</li>
+                <li>🐛 <strong>Sistema de Feedback</strong> - Modal para reportar bugs e sugestões.</li>
+                <li>🎯 <strong>Timeline de Experiência</strong> - Visualização cronológica da carreira profissional.</li>
+                <li>🚀 <strong>Showcasing de Projetos</strong> - Cards interativos com descrição de projetos principais.</li>
             </ul>
         </section>
 
         <section>
-            <h2 class="section-title">5. Customização</h2>
-            <p>Para alterar o esquema de cores, edite o arquivo <code>assets/css/style.css</code>:</p>
+            <h2 class="section-title">5. Sistema de Tradução</h2>
+            <p>O portfólio implementa um sistema completo de internacionalização (i18n) que permite alternar entre 3 idiomas:</p>
+            
+            <h4>5.1. Idiomas Suportados</h4>
+            <ul>
+                <li>🇧🇷 <strong>Português (PT)</strong> - Idioma padrão</li>
+                <li>🇪🇸 <strong>Espanhol (ES)</strong></li>
+                <li>🇺🇸 <strong>Inglês (EN)</strong></li>
+            </ul>
+
+            <h4>5.2. Elementos Traduzidos</h4>
+            <p>Todos os textos principais são traduzidos automaticamente:</p>
+            <ul>
+                <li>✅ Mensagem de loading</li>
+                <li>✅ Mensagem flutuante de feedback</li>
+                <li>✅ Menu de navegação (documentação, contato)</li>
+                <li>✅ Hero section (título e descrição)</li>
+                <li>✅ Seção "Sobre mim"</li>
+                <li>✅ Experiências profissionais (LETMEIN e TIP)</li>
+                <li>✅ Títulos de seções (Graduação, Cursos, Projetos)</li>
+                <li>✅ Descrições dos 5 projetos principais</li>
+                <li>✅ Formulário de contato (labels e botões)</li>
+                <li>✅ Modal de feedback</li>
+                <li>✅ Chatbot (saudação, perguntas e respostas)</li>
+                <li>✅ Gráfico radar (label "Percentual de uso das linguagens")</li>
+                <li>✅ Nota sobre commits públicos</li>
+            </ul>
+
+            <h4>5.3. Como Funciona</h4>
+            <p>O sistema usa atributos HTML customizados e JavaScript:</p>
             <pre>
-                :root {
-                    --primary-color: #6c757d;
-                    --background-color: #f8f9fa;
-                    --text-color: #333;
-                }
+// HTML
+&lt;h1 data-lang="hero-title"&gt;Texto em português&lt;/h1&gt;
+
+// JavaScript - objeto de traduções
+const translations = {
+    pt: { "hero-title": "Moldando o Futuro..." },
+    es: { "hero-title": "Moldeando el Futuro..." },
+    en: { "hero-title": "Shaping the Future..." }
+};
+
+// Função que aplica traduções
+function changeLanguage(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+        el.innerHTML = translations[lang][el.getAttribute('data-lang')];
+    });
+}
             </pre>
+
+            <h4>5.4. Persistência</h4>
+            <p>A preferência de idioma é salva no <code>localStorage</code> do navegador e aplicada automaticamente nas próximas visitas.</p>
         </section>
 
         <section>
-            <h2 class="section-title">6. SEO e Performance</h2>
-            <p>Para garantir um bom desempenho e ranqueamento, foram aplicadas as seguintes práticas:</p>
+            <h2 class="section-title">6. Chatbot Interativo</h2>
+            <p>O chatbot oferece uma experiência interativa para responder perguntas frequentes sobre habilidades, projetos e experiência.</p>
+            
+            <h4>6.1. Características</h4>
             <ul>
-                <li>✅ Uso de meta tags otimizadas (<code>&lt;meta name="description" ...&gt;</code>).</li>
-                <li>✅ Estrutura semântica do HTML.</li>
-                <li>✅ Código limpo e leve para carregamento rápido.</li>
+                <li>💬 10 perguntas predefinidas em cada idioma</li>
+                <li>🔍 Sistema de busca/filtro de perguntas</li>
+                <li>🎯 Respostas contextualizadas e detalhadas</li>
+                <li>🌐 Totalmente traduzido para PT, ES e EN</li>
+                <li>📱 Interface responsiva com botão flutuante</li>
+            </ul>
+
+            <h4>6.2. Perguntas Disponíveis</h4>
+            <ol>
+                <li>Principais habilidades como desenvolvedor Full-Stack</li>
+                <li>Otimização de performance em sistemas de alto tráfego</li>
+                <li>Metodologias e ferramentas utilizadas</li>
+                <li>Desenvolvimento e manutenção de APIs</li>
+                <li>Automação de processos</li>
+                <li>Tecnologias para Front-End</li>
+                <li>Últimos projetos desenvolvidos</li>
+                <li>Experiência com integrações de sistemas</li>
+                <li>Certificações e formações</li>
+                <li>Links para mais informações</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2 class="section-title">7. Gráficos e Visualizações</h2>
+            
+            <h4>7.1. Gráfico de Commits do GitHub</h4>
+            <p>Exibe um gráfico de linha com a frequência de commits nos últimos dias:</p>
+            <ul>
+                <li>📈 Usa a API do GitHub para buscar commits</li>
+                <li>📊 Renderizado com Chart.js</li>
+                <li>⏱️ Atualização em tempo real</li>
+                <li>📝 Nota: "Apenas commits em repositórios públicos" (traduzida)</li>
+            </ul>
+
+            <h4>7.2. Gráfico Radar de Linguagens</h4>
+            <p>Visualização percentual do uso de linguagens de programação:</p>
+            <ul>
+                <li>🎯 PHP: 100%</li>
+                <li>🎯 JavaScript: 80%</li>
+                <li>🎯 GO: 60%</li>
+                <li>🎯 Java: 40%</li>
+                <li>🎯 Python: 30%</li>
+            </ul>
+            <p>O label do gráfico é traduzido automaticamente baseado no idioma selecionado.</p>
+        </section>
+
+        <section>
+            <h2 class="section-title">8. Customização</h2>
+            <p>Ajuste o portfólio ao seu estilo modificando os seguintes arquivos:</p>
+            
+            <h4>8.1. Cores e Estilo Visual</h4>
+            <p>Edite <code>styles/styles.css</code> para personalizar:</p>
+            <ul>
+                <li><strong>Cores principais:</strong> <code>#8a2be2</code> (roxo vibrante), <code>#00d9ff</code> (azul ciano)</li>
+                <li><strong>Gradientes:</strong> Backgrounds com efeito linear gradient</li>
+                <li><strong>Cursor customizado:</strong> Classes <code>.custom-cursor</code> e <code>.cursor-dot</code></li>
+                <li><strong>Animações:</strong> Transitions e hover effects</li>
+                <li><strong>Cards e botões:</strong> Border radius, sombras, glassmorphism</li>
+            </ul>
+
+            <h4>8.2. Conteúdo e Traduções</h4>
+            <p>Edite <code>scripts/scripts.js</code> para modificar:</p>
+            <ul>
+                <li><strong>Objeto translations:</strong> Adicione ou altere textos em PT, ES, EN</li>
+                <li><strong>Chatbot QA:</strong> Modifique perguntas/respostas no objeto <code>chatbotQA</code></li>
+                <li><strong>Dados dos gráficos:</strong> Percentuais do radar chart, fonte de commits</li>
+                <li><strong>Adicionar idioma:</strong> Crie nova chave no objeto translations (ex: <code>fr: {...}</code>)</li>
+            </ul>
+
+            <h4>8.3. Informações Pessoais</h4>
+            <p>Edite <code>index.html</code> para atualizar:</p>
+            <ul>
+                <li>Nome, título profissional e foto de perfil</li>
+                <li>Timeline de experiências profissionais</li>
+                <li>Projetos em destaque (título, descrição, links)</li>
+                <li>Links de redes sociais (LinkedIn, GitHub, etc.)</li>
+                <li>URL do formulário de contato (Formspree ou alternativa)</li>
+            </ul>
+
+            <h4>8.4. Ícones de Idioma</h4>
+            <p>Substitua os ícones em <code>img/</code>:</p>
+            <ul>
+                <li><code>br-icon.png</code> - Bandeira do Brasil (Português)</li>
+                <li><code>sp-icon.png</code> - Bandeira da Espanha (Espanhol)</li>
+                <li><code>en-icon.png</code> - Bandeira dos EUA/UK (Inglês)</li>
+            </ul>
+            <p>Recomendação: Use imagens PNG transparentes de 32x32px ou 48x48px para melhor qualidade.</p>
+        </section>
+
+        <section>
+            <h2 class="section-title">9. SEO e Performance</h2>
+            <p>Para garantir um bom desempenho e ranqueamento, foram aplicadas as seguintes práticas:</p>
+            
+            <h4>9.1. Otimizações de SEO</h4>
+            <ul>
+                <li>✅ <strong>Meta Tags Completas:</strong> Description, keywords, author e Open Graph.</li>
+                <li>✅ <strong>Sitemap.xml:</strong> Mapeamento completo das páginas do site.</li>
+                <li>✅ <strong>Robots.txt:</strong> Configuração para crawlers de busca.</li>
+                <li>✅ <strong>Estrutura Semântica:</strong> HTML5 com tags apropriadas (header, nav, section, footer).</li>
+                <li>✅ <strong>Multilíngue:</strong> Suporte a 3 idiomas amplia o alcance internacional.</li>
+                <li>✅ <strong>Twitter Cards:</strong> Meta tags para compartilhamento otimizado.</li>
+            </ul>
+
+            <h4>9.2. Performance</h4>
+            <ul>
+                <li>⚡ <strong>CDN para bibliotecas:</strong> Bootstrap, jQuery, Chart.js e GSAP via CDN para cache global.</li>
+                <li>⚡ <strong>Minificação:</strong> Arquivos CSS e JS podem ser minificados para produção.</li>
+                <li>⚡ <strong>Lazy Loading:</strong> Imagens carregadas sob demanda quando possível.</li>
+                <li>⚡ <strong>LocalStorage:</strong> Reduz requisições ao salvar preferências localmente.</li>
+                <li>⚡ <strong>Chart.js Otimizado:</strong> Gráficos renderizados com canvas para alta performance.</li>
+                <li>⚡ <strong>GSAP Hardware Acceleration:</strong> Animações com GPU para suavidade máxima.</li>
+            </ul>
+
+            <h4>9.3. Boas Práticas</h4>
+            <ul>
+                <li>📱 Design mobile-first com breakpoints responsivos</li>
+                <li>♿ Acessibilidade com labels descritivos e contraste adequado</li>
+                <li>🔒 HTTPS recomendado para produção</li>
+                <li>🌍 Suporte a múltiplos idiomas melhora UX internacional</li>
             </ul>
         </section>
 
